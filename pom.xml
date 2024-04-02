@@ -1,0 +1,427 @@
+<!-- pom.xml for Parent POM -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- Please change version also in dependency management! -->
+        <version>3.2.4</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>de.gematik.demis</groupId>
+    <artifactId>spring-parent</artifactId>
+    <version>2.1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>Licensed under the EUPL 1.2</name>
+            <url>https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <image.docker.registry>europe-west3-docker.pkg.dev/gematik-all-infra-prod/demis-dev</image.docker.registry>
+        <image.docker.tag>${image.docker.registry}/${project.artifactId}:latest</image.docker.tag>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <mockito.version>5.10.0</mockito.version>
+        <logback.logstash.version>7.4</logback.logstash.version>
+        <asm.version>9.7</asm.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <service-base.version>2.1.0</service-base.version>
+        <!--plugins-->
+        <enforcer.plugin.version>3.4.1</enforcer.plugin.version>
+        <jacoco.plugin.version>0.8.11</jacoco.plugin.version>
+        <surefire.plugin.version>3.2.5</surefire.plugin.version>
+        <fmt.maven.plugin.version>2.23</fmt.maven.plugin.version>
+        <compiler.maven.plugin.version>3.13.0</compiler.maven.plugin.version>
+        <!--HAPI FHIR-->
+        <hapi.fhir.version>7.0.2</hapi.fhir.version>
+        <!--SpringDoc OpenApi  -->
+        <springdoc.version>2.4.0</springdoc.version>
+        <!-- Fix CVEs -->
+        <!-- Needs to be removed if new spring-version is applied to check if a new version is there -->
+        <guava.version>33.1.0-jre</guava.version>
+        <nimbus-jose.version>9.37.3</nimbus-jose.version>
+        <snakeyaml.version>2.2</snakeyaml.version>
+        <logback.version>1.5.3</logback.version>
+        <jackson-bom.version>2.17.0</jackson-bom.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Maven Rule: First dependency declaration wins. Thus, be very careful with the order.  -->
+            <!-- Nimbus -->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose.version}</version>
+            </dependency>
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Although we inherit from Spring-Parent, we have to list the dependency here again
+                otherwise the spring versions will be overwritten by hapi fhir -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <!-- must match the parent pom version -->
+                <version>3.2.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logback.logstash.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.gematik.demis</groupId>
+                <artifactId>service-base</artifactId>
+                <version>${service-base.version}</version>
+            </dependency>
+
+            <!--HAPI FHIR-->
+            <dependency>
+                <groupId>ca.uhn.hapi.fhir</groupId>
+                <artifactId>hapi-fhir-bom</artifactId>
+                <version>${hapi.fhir.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--logback-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+        </dependency>
+
+        <!-- TEST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <configuration>
+                            <release>${maven.compiler.target}</release>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <fork>true</fork>
+                    <meminitial>256</meminitial>
+                    <maxmem>512</maxmem>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>${asm.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>${enforcer.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <banDuplicatePomDependencyVersions/>
+                                <dependencyConvergence/>
+                                <reactorModuleConvergence/>
+                                <requireJavaVersion>
+                                    <version>${java.version}</version>
+                                </requireJavaVersion>
+                                <requireMavenVersion>
+                                    <version>3.8</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-code-coverage-report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <argLine>@{argLine} -Dfile.encoding=UTF-8</argLine>
+                    <includes>
+                        <include>**/Test*.java</include>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                        <include>**/*TestCase.java"</include>
+                        <include>**/*IT.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/*SystemTest.java</exclude>
+                        <exclude>**/*ST.java</exclude>
+                        <exclude>**/*ApplicationTests.java</exclude>
+                        <exclude>**/*ApplicationTest.java</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <phase>integration-test</phase>
+                        <configuration>
+                            <excludes>
+                                <exclude>none</exclude>
+                            </excludes>
+                            <includes>
+                                <include>**/*SystemTest.java</include>
+                                <include>**/*ST.java</include>
+                                <include>**/*ApplicationTests.java</include>
+                                <include>**/*ApplicationTest.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify.fmt</groupId>
+                <artifactId>fmt-maven-plugin</artifactId>
+                <version>${fmt.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>format-code</id>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>src/main/java</sourceDirectory>
+                            <testSourceDirectory>src/test/java</testSourceDirectory>
+                            <verbose>false</verbose>
+                            <filesNamePattern>.*\.java</filesNamePattern>
+                            <skip>false</skip>
+                            <skipSortingImports>false</skipSortingImports>
+                            <style>google</style>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jasig.maven</groupId>
+                <artifactId>notice-maven-plugin</artifactId>
+                <version>2.0.0</version>
+                <configuration>
+                    <noticeTemplate>NOTICE.template</noticeTemplate>
+                    <outputDir>.</outputDir>
+                    <licenseMapping>license-mappings.xml</licenseMapping>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>notice-generation</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!-- Create Docker Image when profile is active -->
+        <profile>
+            <id>docker</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>${maven-antrun-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>create-docker-image</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target name="build-service-docker-image" description="Task to build services docker images">
+                                        <echo>####### Building '${image.docker.tag}'</echo>
+                                        <exec executable="docker" dir="${project.basedir}" failonerror="true">
+                                            <arg value="build"/>
+                                            <arg value="--no-cache"/>
+                                            <arg value="--tag"/>
+                                            <arg value="${image.docker.tag}"/>
+                                            <arg value="."/>
+                                        </exec>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Dependencies Profiles -->
+        <profile>
+            <id>dependencies-webservice</id>
+            <activation>
+                <file><exists>.mvn-profiles/dependencies-webservice</exists></file>
+            </activation>
+            <dependencies>
+                <!-- Spring Boot -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-actuator</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-aop</artifactId>
+                </dependency>
+
+                <!-- OpenAPI Swagger -->
+                <dependency>
+                    <groupId>org.springdoc</groupId>
+                    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                    <version>${springdoc.version}</version>
+                </dependency>
+
+                <!-- micro-meter -->
+                <dependency>
+                    <groupId>io.micrometer</groupId>
+                    <artifactId>micrometer-tracing-bridge-otel</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>io.micrometer</groupId>
+                    <artifactId>micrometer-registry-prometheus</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+
+        <profile>
+            <id>dependencies-feign</id>
+            <activation>
+                <file><exists>.mvn-profiles/dependencies-feign</exists></file>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-openfeign</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>io.github.openfeign</groupId>
+                    <artifactId>feign-micrometer</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+    <!-- Project Information -->
+    <organization>
+        <name>gematik GmbH</name>
+        <url>https://www.gematik.de</url>
+    </organization>
+</project>
