@@ -14,7 +14,6 @@ See the Licence for the specific language governing permissions and limitations 
 
 This project includes:
   Apache Log4j API under Apache-2.0
-  Apache Log4j to SLF4J Adapter under Apache-2.0
   asm under BSD-3-Clause
   ASM based accessors helper used by json-smart under The Apache Software License, Version 2.0
   AssertJ Core under Apache License, Version 2.0
@@ -43,6 +42,7 @@ This project includes:
   JUnit Jupiter Params under Eclipse Public License v2.0
   JUnit Platform Commons under Eclipse Public License v2.0
   JUnit Platform Engine API under Eclipse Public License v2.0
+  Log4j API to SLF4J Adapter under Apache-2.0
   Logback Classic Module under Eclipse Public License - v 1.0 or GNU Lesser General Public License
   Logback Core Module under Eclipse Public License - v 1.0 or GNU Lesser General Public License
   Logstash Logback Encoder under Apache License, Version 2.0 or MIT License
