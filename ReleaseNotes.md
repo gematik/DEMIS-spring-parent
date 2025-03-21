@@ -2,6 +2,13 @@
 
 # Release Notes spring-parent
 
+## Release 2.7.2
+- Updated SpringBoot to 3.4.4
+- Updated internal dependencies
+
+## Release 2.7.1
+- Fixed Issue with Swagger UI
+ 
 ## Release 2.7.0
 - Updated OSPO-Guidelines and checks
 - Add handling for Maven-Central release
