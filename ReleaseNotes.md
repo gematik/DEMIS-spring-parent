@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## Release 2.8.0
+- Updated ospo-resources for adding additional notes and disclaimer
+
 ## Release 2.7.2
 - Updated SpringBoot to 3.4.4
 - Updated internal dependencies
