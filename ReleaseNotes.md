@@ -2,6 +2,10 @@
 
 # Release Notes spring-parent
 
+## Release 2.8.1
+- Fixed issue preventing to generate OpenAPI Specifications under Windows
+- Updated internal dependencies
+
 ## Release 2.8.0
 - Updated ospo-resources for adding additional notes and disclaimer
 
