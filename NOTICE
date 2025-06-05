@@ -21,7 +21,7 @@ This project includes:
   Byte Buddy (without dependencies) under Apache License, Version 2.0
   Byte Buddy agent under Apache License, Version 2.0
   ClassMate under Apache License, Version 2.0
-  Hamcrest under BSD License 3
+  Hamcrest under BSD-3-Clause
   Hibernate Validator Engine under Apache License 2.0
   Jackson-annotations under The Apache Software License, Version 2.0
   Jackson-core under The Apache Software License, Version 2.0
