@@ -2,6 +2,13 @@
 
 # Release Notes spring-parent
 
+## Release 2.10.0
+- Updated SpringBoot to 3.5.0
+
+## Release 2.9.1
+- Updated SpringBoot to 3.4.6
+- Updated internal dependencies
+
 ## Release 2.9.0
 - Updated service-base with change of default Traces Format (W3C)
 - Updated internal dependencies
