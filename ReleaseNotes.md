@@ -2,6 +2,13 @@
 
 # Release Notes spring-parent
 
+## Release 2.12.0
+- Updated SpringBoot to 3.5.2
+- Updated HAPI FHIR to 8.2.0
+
+## Release 2.11.0
+- Updated Plugin for Maven Central
+
 ## Release 2.10.0
 - Updated SpringBoot to 3.5.0
 
