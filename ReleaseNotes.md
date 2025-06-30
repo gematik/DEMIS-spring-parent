@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## Release 2.12.1
+- Updated SpringBoot to 3.5.3
+
 ## Release 2.12.0
 - Updated SpringBoot to 3.5.2
 - Updated HAPI FHIR to 8.2.0
