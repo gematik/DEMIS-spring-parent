@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## Release 2.12.2
+- Updated Notification-Builder-Library to 6.3.1
+
 ## Release 2.12.1
 - Updated SpringBoot to 3.5.3
 
