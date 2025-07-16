@@ -73,6 +73,16 @@ project's pom.xml.
 
 Build and manage your child projects with the configured settings from this parent POM.
 
+## Installation
+
+To install the project to your local maven repository use
+
+```sh
+mvn clean install -P generate-test-jar
+```
+
+this will generate the test-jar that is used by at least Notification-Processing-Service. Hence you are able to test changes to the spring parent locally by updating the dependency one services based on this project. 
+
 ## Security Policy
 
 If you want to see the security policy, please check our [SECURITY.md](.github/SECURITY.md).
