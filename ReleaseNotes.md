@@ -2,15 +2,21 @@
 
 # Release Notes spring-parent
 
+## Release 2.12.6
+- Updated Notification-Builder-Library to 6.3.5
+
+## Release 2.12.5
+- Updated Notification-Builder-Library to 6.3.3
+
 ## Release 2.12.4
-- Updated Notification-Builder-Library to 6.3.4
+- Updated common-lang3 to fix CVE
+- Updated Notification-Builder-Library to 6.3.2
 
 ## Release 2.12.3
-- Updated Notification-Builder-Library to 6.3.3
-- Updated common-lang3 to fix CVE 
+- Updated Notification-Builder-Library to 6.3.1
 
 ## Release 2.12.2
-- Updated Notification-Builder-Library to 6.3.1
+- Updated Notification-Builder-Library to 6.3.0
 
 ## Release 2.12.1
 - Updated SpringBoot to 3.5.3
