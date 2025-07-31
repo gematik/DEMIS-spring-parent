@@ -2,8 +2,19 @@
 
 # Release Notes spring-parent
 
+## 2.12.10
+- notification-builder-library 6.3.6 to 6.3.7
+
+## 2.12.9
+- Notification-Builder-Library version to 6.3.6
+
+## 2.12.8
+- spring-boot-starter-parent from 3.5.3 to 3.5.4
+- fixed license text
+- commons-io from 2.19.0 to 2.20.0
+
 ## 2.12.7
-- Updated Notification-Builder-Library to 6.3.6
+- updated dependencies (Dependabot)
 
 ## 2.12.6
 - Updated Notification-Builder-Library to 6.3.5
