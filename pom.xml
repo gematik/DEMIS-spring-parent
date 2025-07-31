@@ -13,7 +13,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>2.12.10</version>
+  <version>2.12.11</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -50,7 +50,7 @@
     <cyclonedx.maven.plugin.version>2.9.1</cyclonedx.maven.plugin.version>
     <!--DEMIS
     FHIR stack-->
-    <notification.builder.version>6.3.7</notification.builder.version>
+    <notification.builder.version>6.3.8</notification.builder.version>
     <fhir.parser.version>2.5.0</fhir.parser.version>
     <!-- HAPI FHIR Framework -->
     <hapi.fhir.version>8.2.0</hapi.fhir.version>
