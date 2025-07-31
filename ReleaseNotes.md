@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## 2.12.11
+- notification-builder-library 6.3.7 to 6.3.8
+
 ## 2.12.10
 - notification-builder-library 6.3.6 to 6.3.7
 
