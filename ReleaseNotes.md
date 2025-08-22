@@ -2,6 +2,13 @@
 
 # Release Notes spring-parent
 
+## 2.12.13
+- Bump de.gematik.demis:notification-builder-library from 6.3.9 to 7.0.0
+- Bump org.springframework.boot:spring-boot-starter-parent from 3.5.4 to 3.5.5
+- Bump com.nimbusds:nimbus-jose-jwt from 10.4 to 10.4.2
+- Bump io.opentelemetry:opentelemetry-api-incubator from 1.52.0-alpha to 1.53.0-alpha.
+- Bump org.webjars:swagger-ui from 5.26.2 to 5.27.0
+
 ## 2.12.12
 - notification-builder-library 6.3.8 to 6.3.9
 
