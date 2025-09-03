@@ -3,6 +3,9 @@
 # Release Notes spring-parent
 
 ## 2.12.13
+- Updated HAPI FHIR to 8.4.0 
+
+## 2.12.13
 - Bump de.gematik.demis:notification-builder-library from 6.3.9 to 7.0.0
 - Bump org.springframework.boot:spring-boot-starter-parent from 3.5.4 to 3.5.5
 - Bump com.nimbusds:nimbus-jose-jwt from 10.4 to 10.4.2

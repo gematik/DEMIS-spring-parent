@@ -116,7 +116,7 @@
     <dependency>
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-commons</artifactId>
-      <version>1.15.2</version>
+      <version>1.15.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -129,7 +129,7 @@
     <dependency>
       <groupId>io.micrometer</groupId>
       <artifactId>micrometer-observation</artifactId>
-      <version>1.15.2</version>
+      <version>1.15.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -325,7 +325,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.27.3</version>
+      <version>3.27.4</version>
       <licenses>
         <license>
           <name>Apache-2.0</name>
@@ -574,7 +574,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -587,7 +587,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -600,7 +600,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -613,7 +613,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -626,7 +626,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -639,7 +639,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jcl</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -652,7 +652,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>6.2.9</version>
+      <version>6.2.10</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
