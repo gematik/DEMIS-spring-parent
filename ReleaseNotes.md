@@ -2,7 +2,10 @@
 
 # Release Notes spring-parent
 
-## 2.12.13
+## 2.13.0
+- Updated Notification Builder Library and FHIR Parser Library
+
+## 2.12.14
 - Updated HAPI FHIR to 8.4.0 
 
 ## 2.12.13
