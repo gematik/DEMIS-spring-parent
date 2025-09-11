@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## 2.13.1
+- Updated Notification Builder Library to 7.2.0
+
 ## 2.13.0
 - Updated Notification Builder Library and FHIR Parser Library
 
