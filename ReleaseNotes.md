@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## 2.13.3
+- Updated Notification Builder Library to 7.3.1
+
 ## 2.13.2
 - Updated SrpingBoot to 3.5.6
 
