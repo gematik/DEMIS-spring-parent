@@ -4,7 +4,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.5.18</version>
+      <version>1.5.19</version>
       <licenses>
         <license>
           <name>Eclipse Public License - v 1.0</name>
@@ -21,7 +21,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-core</artifactId>
-      <version>1.5.18</version>
+      <version>1.5.19</version>
       <licenses>
         <license>
           <name>Eclipse Public License - v 1.0</name>
