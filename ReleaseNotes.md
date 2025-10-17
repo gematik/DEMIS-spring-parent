@@ -2,6 +2,10 @@
 
 # Release Notes spring-parent
 
+## 2.13.5
+- Updated Notification Builder Library to 7.4.0
+- updated service-base from 2.7.2 to 2.8.1
+
 ## 2.13.4
 - Updated logback to 1.5.19
 
