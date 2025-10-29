@@ -2,6 +2,12 @@
 
 # Release Notes spring-parent
 
+## 2.14.0
+- Updated SrpingBoot to 3.5.7
+- updated fhir parser library to 2.6.1
+- updated hl7-version to 6.6.7
+- updated plugins to newest versions
+
 ## 2.13.5
 - Updated Notification Builder Library to 7.4.0
 - updated service-base from 2.7.2 to 2.8.1
