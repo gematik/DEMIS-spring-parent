@@ -2,8 +2,11 @@
 
 # Release Notes spring-parent
 
+## 2.14.1
+- Revert hl7-version to 6.5.27
+
 ## 2.14.0
-- Updated SrpingBoot to 3.5.7
+- Updated SpringBoot to 3.5.7
 - updated fhir parser library to 2.6.1
 - updated hl7-version to 6.6.7
 - updated plugins to newest versions
