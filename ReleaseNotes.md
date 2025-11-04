@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.2
+- updated notification-builder-library to version 8.0.0
+
 ## 2.14.1
 - Revert hl7-version to 6.5.27
 
