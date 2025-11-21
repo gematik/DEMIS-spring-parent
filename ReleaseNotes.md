@@ -1,6 +1,22 @@
-<img align="right" width="200" height="37" src="media/Gematik_Logo_Flag.png"/> <br/>
+<div style="text-align:right"><img src="media/Gematik_Logo_Flag_small.png" alt="gematik GmbH Logo"/> 
+ </div>
 
 # Release Notes spring-parent
+
+## 2.14.3
+- updated notification-builder-library to version 9.0.0
+- updated spring-boot-dependencies to version 4.0.0
+- updated springdoc to version 3.0.0
+- updated commons-lang3 to version 3.20.0
+- updated ospo-resources to version 1.3.2
+- updated fhir parser library to version 2.6.2
+- updated webjars swagger-ui to version 5.30.2
+- updated com.google.protobuf-protobuf to version 4.33.1
+- updated error_prone_annotations to version 2.44.0
+- updated commons-io to 2.21.0
+- updated opentelemetry-api-incubator to 1.56.0-alpha
+- updated com.nimbusds-nimbus-jose-jwt to version 10.6
+- updated openapi-generator-maven-plugin to version 7.17.0
 
 ## 2.14.2
 - updated notification-builder-library to version 8.0.0
