@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.5
+- update notification-builder-library to version 9.0.1
+
 ## 2.14.4
 - downgrade spring boot dependencies to version 3.5.8
 
