@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.6
+- SpringDoc-Version compatibility to spring-parent 3.x.x
+
 ## 2.14.5
 - update notification-builder-library to version 9.0.1
 
