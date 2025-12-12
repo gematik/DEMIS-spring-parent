@@ -13,7 +13,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>2.14.10</version>
+  <version>2.14.11</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -75,6 +75,13 @@
 
   <dependencyManagement>
     <dependencies>
+      <!--CVEs-->
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.20.0</version>
+      </dependency>
+
       <!-- Maven Rule: First dependency declaration wins. Thus, be very careful with the order.  -->
       <!-- OpenTelemetry Incubator (enforcer issue on SpringBoot 3.3.1) -->
       <dependency>

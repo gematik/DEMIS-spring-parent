@@ -3,8 +3,11 @@
 
 # Release Notes spring-parent
 
+## 2.14.11
+- updated apache-commons-lang3 to 3.20.0
+
 ## 2.14.10
-- updated Plugins and Libraries
+- updated Plugins and Libraries 
 
 ## 2.14.9
 - updated notificaiton-builder-library to version 9.0.4
