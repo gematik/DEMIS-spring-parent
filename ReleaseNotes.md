@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.12
+- updated service-base to version 2.9.0
+
 ## 2.14.11
 - updated apache-commons-lang3 to 3.20.0
 
