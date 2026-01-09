@@ -2,6 +2,8 @@
  </div>
 
 # Release Notes spring-parent
+## 2.14.13
+- add annotationProcessorPaths for lombok
 
 ## 2.14.12
 - updated service-base to version 2.9.0
