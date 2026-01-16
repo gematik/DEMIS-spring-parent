@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.17
+- updated service-base to version 2.10.1
+
 ## 2.14.16
 - updated notification-builder-library to version 9.0.8
 
