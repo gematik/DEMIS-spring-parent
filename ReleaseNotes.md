@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.19
+- updated notification-builder-library to version 9.0.10
+
 ## 2.14.18
 - updated notification-builder-library to version 9.0.9
 
