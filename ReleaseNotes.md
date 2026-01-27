@@ -3,6 +3,19 @@
 
 # Release Notes spring-parent
 
+## 2.14.20
+- updated spring-boot-starter-parent to version 3.5.10
+- updated hapi-fhir to version 8.6.0
+- updated fhir-parser-library to version 2.6.3
+- updated springdoc to version 2.8.15
+- updated swagger-ui to version 5.31.0
+- updated openapi-generator-maven-plugin to version 7.19.0
+- updated opentelemetry-api-incubator to version 1.58.0-alpha
+- updated opentelemetry-semconv to version 1.37.0
+- updated nimbus-jose-jwt to version 10.7
+- updated error_prone_annotations to version 2.46.0
+- updated spring-cloud to version 2025.0.1
+
 ## 2.14.19
 - updated notification-builder-library to version 9.0.10
 

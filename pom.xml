@@ -7,13 +7,13 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.8</version>
+    <version>3.5.10</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>2.14.19</version>
+  <version>2.14.20</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -32,14 +32,14 @@
     <java.version>21</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <mockito.version>5.12.0</mockito.version>
+    <mockito.version>5.17.0</mockito.version>
     <logback.logstash.version>9.0</logback.logstash.version>
-    <asm.version>9.9</asm.version>
-    <nimbus-jose.version>10.6</nimbus-jose.version>
-    <spring-cloud.version>2025.0.0</spring-cloud.version>
+    <asm.version>9.9.1</asm.version>
+    <nimbus-jose.version>10.7</nimbus-jose.version>
+    <spring-cloud.version>2025.0.1</spring-cloud.version>
     <service-base.version>2.10.1</service-base.version>
     <opentelemetry-semconv.version>1.37.0</opentelemetry-semconv.version>
-    <opentelemetry-api-incubator.version>1.57.0-alpha</opentelemetry-api-incubator.version>
+    <opentelemetry-api-incubator.version>1.58.0-alpha</opentelemetry-api-incubator.version>
     <!--plugins-->
     <enforcer.plugin.version>3.6.2</enforcer.plugin.version>
     <jacoco.plugin.version>0.8.14</jacoco.plugin.version>
@@ -51,16 +51,16 @@
     <!--DEMIS
     FHIR stack-->
     <notification.builder.version>9.0.10</notification.builder.version>
-    <fhir.parser.version>2.6.2</fhir.parser.version>
+    <fhir.parser.version>2.6.3</fhir.parser.version>
     <!-- HAPI FHIR Framework -->
     <hapi.fhir.version>8.6.0</hapi.fhir.version>
     <!-- HAPI FHIR Core: Important, this must match the version declared in the Framework -->
     <hl7.version>6.6.7</hl7.version>
     <!--SpringDoc
     OpenApi  -->
-    <springdoc.version>2.8.14</springdoc.version>
-    <swagger-ui.version>5.30.3</swagger-ui.version>
-    <openapi-generator-maven-plugin.version>7.17.0</openapi-generator-maven-plugin.version>
+    <springdoc.version>2.8.15</springdoc.version>
+    <swagger-ui.version>5.31.0</swagger-ui.version>
+    <openapi-generator-maven-plugin.version>7.19.0</openapi-generator-maven-plugin.version>
     <openapi-generator.inputSpec>target/spec/api-spec.yaml</openapi-generator.inputSpec>
     <openapi-generator.generatorName>markdown</openapi-generator.generatorName>
     <openapi-generator.outputDir>docs/api</openapi-generator.outputDir>
@@ -68,21 +68,25 @@
     <!-- Needs to be removed if new spring-version/hapi-version is applied to check if a new version is there -->
     <commons.version>2.21.0</commons.version>
     <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
-    <protobuf.version>4.33.2</protobuf.version>
-    <errorprone.version>2.45.0</errorprone.version>
+    <errorprone.version>2.46.0</errorprone.version>
     <commons.fileupload.version>1.6.0</commons.fileupload.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <!-- Maven Rule: First dependency declaration wins. Thus, be very careful with the order.  -->
       <!--CVEs-->
       <dependency>
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-lang3</artifactId>
           <version>3.20.0</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-text</artifactId>
+        <version>1.13.0</version>
+      </dependency>
 
-      <!-- Maven Rule: First dependency declaration wins. Thus, be very careful with the order.  -->
       <!-- OpenTelemetry Incubator (enforcer issue on SpringBoot 3.3.1) -->
       <dependency>
         <groupId>io.opentelemetry</groupId>
@@ -112,12 +116,6 @@
         <artifactId>error_prone_annotations</artifactId>
         <version>${errorprone.version}</version>
       </dependency>
-      <!-- protobuf-java -->
-      <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java</artifactId>
-        <version>${protobuf.version}</version>
-      </dependency>
       <!-- commons-fileupload -->
       <dependency>
         <groupId>commons-fileupload</groupId>
@@ -131,7 +129,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- must match the parent pom version -->
-        <version>3.5.8</version>
+        <version>3.5.10</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
