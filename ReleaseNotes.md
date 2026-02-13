@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.21
+- updated notification-builder-library to version 9.1.0
+
 ## 2.14.20
 - updated spring-boot-starter-parent to version 3.5.10
 - updated hapi-fhir to version 8.6.0
