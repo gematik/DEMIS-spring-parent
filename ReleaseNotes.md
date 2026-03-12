@@ -3,6 +3,9 @@
 
 # Release Notes spring-parent
 
+## 2.14.23
+- updated spring-boot-starter-parent to version 3.5.11
+- 
 ## 2.14.22
 - updated service-base to version 2.11.1
 
