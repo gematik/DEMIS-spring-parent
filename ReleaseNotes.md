@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## 2.15.1
+- updated commons-text to 1.15.0
+
 ## 2.15.0
 - updated java to version 25
 
