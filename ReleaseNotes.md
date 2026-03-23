@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## 2.15.2
+- updated spring-boot-starter-parent to version 3.5.12
+
 ## 2.15.1
 - updated commons-text to 1.15.0
 
