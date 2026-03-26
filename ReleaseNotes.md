@@ -2,6 +2,9 @@
 
 # Release Notes spring-parent
 
+## Release 2.15.6
+- updated service-base to version 2.14.1
+
 ## Release 2.15.5
 - updated service-base to version 2.14.0
 
