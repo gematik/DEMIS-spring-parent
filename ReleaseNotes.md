@@ -1,6 +1,9 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 2.15.7
+- added ReleaseNotes check to pipelines
+- updated spring-boot-starter-parent to version 3.5.13
 
 ## Release 2.15.6
 - updated service-base to version 2.14.1
