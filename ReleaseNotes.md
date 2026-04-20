@@ -1,6 +1,9 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 2.15.9
+- updated service-base to version 2.15.0
+
 ## Release 2.15.8
 - remove fixed opentelemetry versions
 - updated notification-builder-library to version 9.2.3
