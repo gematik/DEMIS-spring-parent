@@ -7,13 +7,13 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.13</version>
+    <version>3.5.14</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>2.15.9</version>
+  <version>2.16.0</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -32,11 +32,10 @@
     <java.version>25</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <mockito.version>5.17.0</mockito.version>
     <logback.logstash.version>9.0</logback.logstash.version>
     <asm.version>9.9.1</asm.version>
-    <nimbus-jose.version>10.7</nimbus-jose.version>
-    <spring-cloud.version>2025.0.1</spring-cloud.version>
+    <nimbus-jose.version>10.9</nimbus-jose.version>
+    <spring-cloud.version>2025.0.2</spring-cloud.version>
     <service-base.version>2.15.0</service-base.version>
     <!--plugins-->
     <enforcer.plugin.version>3.6.2</enforcer.plugin.version>
@@ -68,12 +67,29 @@
     <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
     <errorprone.version>2.46.0</errorprone.version>
     <commons.fileupload.version>1.6.0</commons.fileupload.version>
+    <dep.bouncycastle.version>1.84</dep.bouncycastle.version>
+    <jackson-databind.version>3.1.2</jackson-databind.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <!-- Maven Rule: First dependency declaration wins. Thus, be very careful with the order.  -->
       <!--CVEs-->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk18on</artifactId>
+        <version>${dep.bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+        <version>${dep.bouncycastle.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>tools.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-databind.version}</version>
+      </dependency>
       <dependency>
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-lang3</artifactId>
@@ -116,7 +132,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- must match the parent pom version -->
-        <version>3.5.13</version>
+        <version>3.5.14</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
