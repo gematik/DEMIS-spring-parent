@@ -1,6 +1,13 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 2.15.10
+- updated spring-boot-starter-parent to version 3.5.14
+- updated nimbus-jose-jwt to version 10.9
+- updated spring-cloud to version 2025.0.2
+- set version of bouncycastle to 1.84 because of CVEs
+- set version of jackson-databind to 3.1.2 because of CVEs
+
 ## Release 2.15.9
 - updated service-base to version 2.15.0
 
