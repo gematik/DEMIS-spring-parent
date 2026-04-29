@@ -1,7 +1,10 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
-## Release 2.15.10
+## Release 2.16.1
+- updated notification-builder-library to version 9.2.4
+
+## Release 2.16.0
 - updated spring-boot-starter-parent to version 3.5.14
 - updated nimbus-jose-jwt to version 10.9
 - updated spring-cloud to version 2025.0.2
