@@ -7,13 +7,13 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.14</version>
+    <version>4.0.5</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>2.16.1</version>
+  <version>4.0.0</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -35,8 +35,9 @@
     <logback.logstash.version>9.0</logback.logstash.version>
     <asm.version>9.9.1</asm.version>
     <nimbus-jose.version>10.9</nimbus-jose.version>
-    <spring-cloud.version>2025.0.2</spring-cloud.version>
+    <spring-cloud.version>2025.1.1</spring-cloud.version>
     <service-base.version>2.15.0</service-base.version>
+    <wiremock-integrations.spring-boot.version>4.2.1</wiremock-integrations.spring-boot.version>
     <!--plugins-->
     <enforcer.plugin.version>3.6.2</enforcer.plugin.version>
     <jacoco.plugin.version>0.8.14</jacoco.plugin.version>
@@ -55,7 +56,7 @@
     <hl7.version>6.6.7</hl7.version>
     <!--SpringDoc
     OpenApi  -->
-    <springdoc.version>2.8.15</springdoc.version>
+    <springdoc.version>3.0.3</springdoc.version>
     <swagger-ui.version>5.31.0</swagger-ui.version>
     <openapi-generator-maven-plugin.version>7.19.0</openapi-generator-maven-plugin.version>
     <openapi-generator.inputSpec>target/spec/api-spec.yaml</openapi-generator.inputSpec>
@@ -132,7 +133,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- must match the parent pom version -->
-        <version>3.5.14</version>
+        <version>4.0.5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -143,6 +144,12 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.wiremock.integrations</groupId>
+        <artifactId>wiremock-spring-boot</artifactId>
+        <version>${wiremock-integrations.spring-boot.version}</version>
       </dependency>
 
       <!-- Add support for OpenAPI 3.1.0 -->
@@ -217,6 +224,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-validation</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-properties-migrator</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -240,12 +252,6 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-<!--   TODO  will come with Spring Boot 4.0.0-->
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-resttestclient</artifactId>-->
-<!--      <scope>test</scope>-->
-<!--    </dependency>-->
   </dependencies>
 
   <build>
@@ -551,7 +557,7 @@
         <!-- Spring Boot -->
         <dependency>
           <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
+          <artifactId>spring-boot-starter-webmvc</artifactId>
         </dependency>
         <dependency>
           <groupId>org.springframework.boot</groupId>
@@ -559,7 +565,28 @@
         </dependency>
         <dependency>
           <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-aop</artifactId>
+          <artifactId>spring-boot-starter-aspectj</artifactId>
+        </dependency>
+
+        <dependency>
+          <groupId>de.gematik.demis</groupId>
+          <artifactId>service-base</artifactId>
+        </dependency>
+
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-webmvc-test</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-resttestclient</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-restclient</artifactId>
+          <scope>test</scope>
         </dependency>
 
         <!-- OpenAPI Swagger -->
@@ -634,6 +661,56 @@
           <groupId>io.github.openfeign</groupId>
           <artifactId>feign-micrometer</artifactId>
         </dependency>
+        <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-contract-wiremock</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.wiremock.integrations</groupId>
+          <artifactId>wiremock-spring-boot</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>dependencies-database</id>
+      <activation>
+        <file>
+          <exists>.mvn-profiles/dependencies-database</exists>
+        </file>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.postgresql</groupId>
+          <artifactId>postgresql</artifactId>
+          <scope>runtime</scope>
+        </dependency>
+        <!-- Test dependencies including postgres testcontainer -->
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa-test</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-testcontainers</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.testcontainers</groupId>
+          <artifactId>testcontainers-junit-jupiter</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.testcontainers</groupId>
+          <artifactId>testcontainers-postgresql</artifactId>
+          <scope>test</scope>
+        </dependency>
       </dependencies>
     </profile>
     <profile>
@@ -647,6 +724,11 @@
         <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-web</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-resttestclient</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
