@@ -7,13 +7,14 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
+    <!-- Important: change version also in dependencyManagement -->
     <version>4.0.6</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.0.1</version>
+  <version>4.0.2</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -36,8 +37,6 @@
     <asm.version>9.9.1</asm.version>
     <nimbus-jose.version>10.9</nimbus-jose.version>
     <spring-cloud.version>2025.1.1</spring-cloud.version>
-    <service-base.version>2.15.0</service-base.version>
-    <wiremock-integrations.spring-boot.version>4.2.1</wiremock-integrations.spring-boot.version>
     <!--plugins-->
     <enforcer.plugin.version>3.6.2</enforcer.plugin.version>
     <jacoco.plugin.version>0.8.14</jacoco.plugin.version>
@@ -46,30 +45,32 @@
     <compiler.maven.plugin.version>3.14.1</compiler.maven.plugin.version>
     <version.maven.javadoc>3.12.0</version.maven.javadoc>
     <cyclonedx.maven.plugin.version>2.9.1</cyclonedx.maven.plugin.version>
-    <!--DEMIS
-    FHIR stack-->
+    <!--DEMIS libraries-->
+    <service-base.version>2.15.0</service-base.version>
     <notification.builder.version>9.2.5</notification.builder.version>
     <fhir.parser.version>2.7.0</fhir.parser.version>
     <!-- HAPI FHIR Framework -->
     <hapi.fhir.version>8.6.0</hapi.fhir.version>
     <!-- HAPI FHIR Core: Important, this must match the version declared in the Framework -->
     <hl7.version>6.6.7</hl7.version>
-    <!--SpringDoc
-    OpenApi  -->
+    <!--SpringDoc OpenApi  -->
     <springdoc.version>3.0.3</springdoc.version>
-    <swagger-ui.version>5.31.0</swagger-ui.version>
+    <swagger-ui.version>5.31.2</swagger-ui.version>
     <openapi-generator-maven-plugin.version>7.19.0</openapi-generator-maven-plugin.version>
     <openapi-generator.inputSpec>target/spec/api-spec.yaml</openapi-generator.inputSpec>
     <openapi-generator.generatorName>markdown</openapi-generator.generatorName>
     <openapi-generator.outputDir>docs/api</openapi-generator.outputDir>
     <!-- Fix CVEs -->
     <!-- Needs to be removed if new spring-version/hapi-version is applied to check if a new version is there -->
-    <commons.version>2.21.0</commons.version>
     <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
     <errorprone.version>2.46.0</errorprone.version>
+    <commons.io.version>2.22.0</commons.io.version>
     <commons.fileupload.version>1.6.0</commons.fileupload.version>
+    <commons.lang3.version>3.20.0</commons.lang3.version>
+    <commons.text.version>1.15.0</commons.text.version>
     <dep.bouncycastle.version>1.84</dep.bouncycastle.version>
-    <jackson-databind.version>3.1.2</jackson-databind.version>
+    <wiremock-integrations.spring-boot.version>4.2.1</wiremock-integrations.spring-boot.version>
+    <netty.version>4.2.13.Final</netty.version>
   </properties>
 
   <dependencyManagement>
@@ -87,19 +88,14 @@
         <version>${dep.bouncycastle.version}</version>
       </dependency>
       <dependency>
-        <groupId>tools.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson-databind.version}</version>
-      </dependency>
-      <dependency>
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-lang3</artifactId>
-          <version>3.20.0</version>
+          <version>${commons.lang3.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-text</artifactId>
-        <version>1.15.0</version>
+        <version>${commons.text.version}</version>
       </dependency>
 
       <!-- Nimbus -->
@@ -112,7 +108,7 @@
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>${commons.version}</version>
+        <version>${commons.io.version}</version>
       </dependency>
       <!-- Error Prone Annotations -->
       <dependency>
@@ -127,13 +123,20 @@
         <version>${commons.fileupload.version}</version>
       </dependency>
 
+      <!-- Remove if spring boot use the version 4.2.13.Final or higher -->
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec-compression</artifactId>
+        <version>${netty.version}</version>
+      </dependency>
+
       <!-- Although we inherit from Spring-Parent, we have to list the dependency here again
           otherwise the spring versions will be overwritten by hapi fhir -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- must match the parent pom version -->
-        <version>4.0.5</version>
+        <version>4.0.6</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
