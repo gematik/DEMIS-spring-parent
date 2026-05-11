@@ -7,13 +7,13 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.5</version>
+    <version>4.0.6</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -48,7 +48,7 @@
     <cyclonedx.maven.plugin.version>2.9.1</cyclonedx.maven.plugin.version>
     <!--DEMIS
     FHIR stack-->
-    <notification.builder.version>9.2.4</notification.builder.version>
+    <notification.builder.version>9.2.5</notification.builder.version>
     <fhir.parser.version>2.7.0</fhir.parser.version>
     <!-- HAPI FHIR Framework -->
     <hapi.fhir.version>8.6.0</hapi.fhir.version>
@@ -228,6 +228,11 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-properties-migrator</artifactId>
       <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>de.gematik.demis</groupId>
+      <artifactId>service-base</artifactId>
     </dependency>
 
     <dependency>
@@ -566,11 +571,6 @@
         <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-aspectj</artifactId>
-        </dependency>
-
-        <dependency>
-          <groupId>de.gematik.demis</groupId>
-          <artifactId>service-base</artifactId>
         </dependency>
 
         <dependency>

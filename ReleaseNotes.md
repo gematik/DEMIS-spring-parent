@@ -1,6 +1,11 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.0.1
+- Updated Spring Boot to version 4.0.6
+- updated notification-builder-library to version 9.2.5
+- always dependency on service-base
+
 ## Release 4.0.0
 - Updated Spring Boot to version 4.x
 - new profile 'dependencies-database'
