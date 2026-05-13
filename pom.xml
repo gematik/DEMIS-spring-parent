@@ -14,7 +14,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.0.2</version>
+  <version>4.0.3</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -575,7 +575,39 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-aspectj</artifactId>
         </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-micrometer-metrics</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-opentelemetry</artifactId>
+          <exclusions>
+            <exclusion>
+              <groupId>io.micrometer</groupId>
+              <artifactId>micrometer-registry-otlp</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>io.micrometer</groupId>
+          <artifactId>micrometer-registry-prometheus</artifactId>
+          <scope>runtime</scope>
+        </dependency>
 
+        <!-- OpenAPI Swagger -->
+        <dependency>
+          <groupId>org.springdoc</groupId>
+          <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+          <version>${springdoc.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springdoc</groupId>
+          <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+          <version>${springdoc.version}</version>
+        </dependency>
+
+        <!-- Test -->
         <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-webmvc-test</artifactId>
@@ -591,28 +623,15 @@
           <artifactId>spring-boot-restclient</artifactId>
           <scope>test</scope>
         </dependency>
-
-        <!-- OpenAPI Swagger -->
         <dependency>
-          <groupId>org.springdoc</groupId>
-          <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-          <version>${springdoc.version}</version>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-micrometer-metrics-test</artifactId>
+          <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>org.springdoc</groupId>
-          <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
-          <version>${springdoc.version}</version>
-        </dependency>
-
-        <!-- micro-meter -->
-        <dependency>
-          <groupId>io.micrometer</groupId>
-          <artifactId>micrometer-tracing-bridge-otel</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>io.micrometer</groupId>
-          <artifactId>micrometer-registry-prometheus</artifactId>
-          <scope>runtime</scope>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-micrometer-tracing-test</artifactId>
+          <scope>test</scope>
         </dependency>
       </dependencies>
     </profile>
