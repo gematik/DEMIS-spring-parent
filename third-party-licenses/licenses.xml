@@ -103,7 +103,7 @@
     <dependency>
       <groupId>de.gematik.demis</groupId>
       <artifactId>service-base</artifactId>
-      <version>3.0.0</version>
+      <version>3.0.1</version>
       <licenses>
         <license>
           <name>EUPL-1.2</name>
