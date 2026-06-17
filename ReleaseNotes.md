@@ -1,6 +1,10 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.0.6
+- updated spring-boot-starter-parent to 4.0.7
+- updated pipeline to use a Jira Ticket ID if set
+
 ## Release 4.0.5
 - updated notification-builder-library to 9.2.8
 - updated service-base to 3.0.1
