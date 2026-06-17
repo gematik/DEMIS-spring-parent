@@ -8,13 +8,13 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <!-- Important: change version also in dependencyManagement -->
-    <version>4.0.6</version>
+    <version>4.0.7</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.0.5</version>
+  <version>4.0.6</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -70,7 +70,6 @@
     <commons.text.version>1.15.0</commons.text.version>
     <dep.bouncycastle.version>1.84</dep.bouncycastle.version>
     <wiremock-integrations.spring-boot.version>4.2.1</wiremock-integrations.spring-boot.version>
-    <netty.version>4.2.13.Final</netty.version>
   </properties>
 
   <dependencyManagement>
@@ -123,20 +122,13 @@
         <version>${commons.fileupload.version}</version>
       </dependency>
 
-      <!-- Remove if spring boot use the version 4.2.13.Final or higher -->
-      <dependency>
-        <groupId>io.netty</groupId>
-        <artifactId>netty-codec-compression</artifactId>
-        <version>${netty.version}</version>
-      </dependency>
-
       <!-- Although we inherit from Spring-Parent, we have to list the dependency here again
           otherwise the spring versions will be overwritten by hapi fhir -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- must match the parent pom version -->
-        <version>4.0.6</version>
+        <version>4.0.7</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
