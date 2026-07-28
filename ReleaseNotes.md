@@ -1,6 +1,9 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.1.4
+- clamped postgres version
+
 ## Release 4.1.3
 - updated dependencies:
     - springboot to 4.1.0
@@ -18,6 +21,7 @@
     - error_prone_annotations to 2.50.0
     - bouncycastle to 1.85
     - wiremock to 4.2.2
+
 ## Release 4.1.2
 - updated notification-builder-library to 9.3.0
 
