@@ -14,7 +14,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.1.7</version>
+  <version>4.1.8</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -70,6 +70,8 @@
     <commons.text.version>1.15.0</commons.text.version>
     <dep.bouncycastle.version>1.85</dep.bouncycastle.version>
     <wiremock-integrations.spring-boot.version>4.2.2</wiremock-integrations.spring-boot.version>
+    <netty.version>4.2.16.Final</netty.version>
+    <httpcore5.version>5.4.3</httpcore5.version>
   </properties>
 
   <dependencyManagement>

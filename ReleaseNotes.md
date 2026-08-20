@@ -1,6 +1,9 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.1.8
+- updated netty to 4.2.16.Final and apache httpcore5 to 5.4.3 due to CVEs
+
 ## Release 4.1.7
 - updated service-base to 3.1.1
 
