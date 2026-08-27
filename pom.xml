@@ -8,13 +8,13 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <!-- Important: change version also in dependencyManagement -->
-    <version>4.1.0</version>
+    <version>4.1.1</version>
     <relativePath />
   </parent>
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.1.8</version>
+  <version>4.1.9</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -36,7 +36,7 @@
     <logback.logstash.version>9.0</logback.logstash.version>
     <asm.version>9.10.1</asm.version>
     <nimbus-jose.version>10.9.1</nimbus-jose.version>
-    <spring-cloud.version>2025.1.2</spring-cloud.version>
+    <spring-cloud.version>2025.1.3</spring-cloud.version>
     <!--plugins-->
     <enforcer.plugin.version>3.6.3</enforcer.plugin.version>
     <jacoco.plugin.version>0.8.15</jacoco.plugin.version>
@@ -135,7 +135,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <!-- must match the parent pom version -->
-        <version>4.1.0</version>
+        <version>4.1.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

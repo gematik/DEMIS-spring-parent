@@ -1,6 +1,11 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.1.9
+- updated spring dependencies:
+    - spring-boot-starter-parent to 4.1.1
+    - spring-cloud to 2025.1.3
+  
 ## Release 4.1.8
 - updated netty to 4.2.16.Final and apache httpcore5 to 5.4.3 due to CVEs
 
