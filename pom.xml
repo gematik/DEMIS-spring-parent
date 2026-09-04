@@ -14,7 +14,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.1.10</version>
+  <version>4.1.11</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -154,7 +154,14 @@
         <artifactId>wiremock-spring-boot</artifactId>
         <version>${wiremock-integrations.spring-boot.version}</version>
       </dependency>
-
+      <!-- jetty version conflict within wiremock-spring-boot, remove when wiremock releases artefact with consistent versions for jetty-ee10-webapp-->
+      <dependency>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-bom</artifactId>
+        <version>12.1.12</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <!-- Add support for OpenAPI 3.1.0 -->
       <dependency>
         <groupId>org.webjars</groupId>
@@ -682,11 +689,6 @@
         <dependency>
           <groupId>io.github.openfeign</groupId>
           <artifactId>feign-micrometer</artifactId>
-        </dependency>
-        <dependency>
-          <groupId>org.springframework.cloud</groupId>
-          <artifactId>spring-cloud-contract-wiremock</artifactId>
-          <scope>test</scope>
         </dependency>
         <dependency>
           <groupId>org.wiremock.integrations</groupId>
