@@ -1,6 +1,10 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.1.11
+- removed spring-cloud-contract-wiremock dependency from dependencies-feign profile
+- added jetty-ee10-bom to dependency-management due to wiremock dependency version conflict
+
 ## Release 4.1.10
 - Updated minor/patch versions of dependencies
 
