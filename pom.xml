@@ -14,7 +14,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.1.11</version>
+  <version>4.1.12</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -69,6 +69,8 @@
     <commons.lang3.version>3.20.0</commons.lang3.version>
     <commons.text.version>1.15.0</commons.text.version>
     <dep.bouncycastle.version>1.85</dep.bouncycastle.version>
+    <jackson-2-bom.version>2.21.6</jackson-2-bom.version>
+    <jackson-bom.version>3.1.6</jackson-bom.version>
     <wiremock-integrations.spring-boot.version>4.2.2</wiremock-integrations.spring-boot.version>
     <netty.version>4.2.16.Final</netty.version>
     <httpcore5.version>5.4.3</httpcore5.version>
@@ -98,6 +100,16 @@
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-text</artifactId>
         <version>${commons.text.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>tools.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson-bom.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson-2-bom.version}</version>
       </dependency>
 
       <!-- Nimbus -->
