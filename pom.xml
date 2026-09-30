@@ -14,7 +14,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.1.12</version>
+  <version>4.1.13</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -35,16 +35,16 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <logback.logstash.version>9.0</logback.logstash.version>
     <asm.version>9.10.1</asm.version>
-    <nimbus-jose.version>10.9.1</nimbus-jose.version>
+    <nimbus-jose.version>10.10</nimbus-jose.version>
     <spring-cloud.version>2025.1.3</spring-cloud.version>
     <!--plugins-->
     <enforcer.plugin.version>3.6.3</enforcer.plugin.version>
     <jacoco.plugin.version>0.8.15</jacoco.plugin.version>
-    <surefire.plugin.version>3.5.6</surefire.plugin.version>
+    <surefire.plugin.version>3.6.0</surefire.plugin.version>
     <fmt.maven.plugin.version>2.29</fmt.maven.plugin.version>
     <compiler.maven.plugin.version>3.16.0</compiler.maven.plugin.version>
     <version.maven.javadoc>3.12.0</version.maven.javadoc>
-    <cyclonedx.maven.plugin.version>2.9.2</cyclonedx.maven.plugin.version>
+    <cyclonedx.maven.plugin.version>2.9.3</cyclonedx.maven.plugin.version>
     <!--DEMIS libraries-->
     <service-base.version>3.1.1</service-base.version>
     <notification.builder.version>9.4.1</notification.builder.version>
@@ -54,9 +54,9 @@
     <!-- HAPI FHIR Core: Important, this must match the version declared in the Framework -->
     <hl7.version>6.6.7</hl7.version>
     <!--SpringDoc OpenApi  -->
-    <springdoc.version>3.0.3</springdoc.version>
-    <swagger-ui.version>5.32.11</swagger-ui.version>
-    <openapi-generator-maven-plugin.version>7.24.0</openapi-generator-maven-plugin.version>
+    <springdoc.version>3.1.1</springdoc.version>
+    <swagger-ui.version>5.32.15</swagger-ui.version>
+    <openapi-generator-maven-plugin.version>7.25.0</openapi-generator-maven-plugin.version>
     <openapi-generator.inputSpec>target/spec/api-spec.yaml</openapi-generator.inputSpec>
     <openapi-generator.generatorName>markdown</openapi-generator.generatorName>
     <openapi-generator.outputDir>docs/api</openapi-generator.outputDir>
@@ -66,12 +66,12 @@
     <errorprone.version>2.50.0</errorprone.version>
     <commons.io.version>2.22.0</commons.io.version>
     <commons.fileupload.version>1.6.0</commons.fileupload.version>
-    <commons.lang3.version>3.20.0</commons.lang3.version>
+    <commons.lang3.version>3.21.0</commons.lang3.version>
     <commons.text.version>1.15.0</commons.text.version>
-    <dep.bouncycastle.version>1.85</dep.bouncycastle.version>
-    <jackson-2-bom.version>2.21.6</jackson-2-bom.version>
-    <jackson-bom.version>3.1.6</jackson-bom.version>
-    <wiremock-integrations.spring-boot.version>4.2.2</wiremock-integrations.spring-boot.version>
+    <dep.bouncycastle.version>1.86</dep.bouncycastle.version>
+    <jackson-2-bom.version>2.22.3</jackson-2-bom.version>
+    <jackson-bom.version>3.2.3</jackson-bom.version>
+    <wiremock-integrations.spring-boot.version>4.4.2</wiremock-integrations.spring-boot.version>
     <netty.version>4.2.16.Final</netty.version>
     <httpcore5.version>5.4.3</httpcore5.version>
     <tomcat.version>11.0.25</tomcat.version>
@@ -81,6 +81,20 @@
     <dependencies>
       <!-- Maven Rule: First dependency declaration wins. Thus, be very careful with the order.  -->
       <!--CVEs-->
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${jackson-2-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>tools.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>${jackson-bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcpkix-jdk18on</artifactId>
@@ -101,17 +115,6 @@
         <artifactId>commons-text</artifactId>
         <version>${commons.text.version}</version>
       </dependency>
-      <dependency>
-        <groupId>tools.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson-bom.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson-2-bom.version}</version>
-      </dependency>
-
       <!-- Nimbus -->
       <dependency>
         <groupId>com.nimbusds</groupId>
@@ -170,7 +173,7 @@
       <dependency>
         <groupId>org.eclipse.jetty.ee10</groupId>
         <artifactId>jetty-ee10-bom</artifactId>
-        <version>12.1.12</version>
+        <version>12.1.13</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -478,7 +481,7 @@
       <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>2.7.0</version>
+          <version>2.7.1</version>
           <configuration>
               <licenseName>eupl_v1_2</licenseName>
               <inceptionYear>2025</inceptionYear>
@@ -837,7 +840,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.3.1</version>
+            <version>3.4.0</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
