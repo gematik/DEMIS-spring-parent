@@ -14,7 +14,7 @@
 
   <groupId>de.gematik.demis</groupId>
   <artifactId>spring-parent</artifactId>
-  <version>4.1.15</version>
+  <version>4.1.16</version>
   <packaging>pom</packaging>
   <name>spring-parent</name>
   <description>This project serves as a parent POM for other demis spring boot based projects. It provides common dependency management and build plugin configurations for child projects.</description>
@@ -38,8 +38,8 @@
     <nimbus-jose.version>10.10</nimbus-jose.version>
     <spring-cloud.version>2025.1.4</spring-cloud.version>
     <!--plugins-->
-    <enforcer.plugin.version>3.6.3</enforcer.plugin.version>
-    <jacoco.plugin.version>0.8.15</jacoco.plugin.version>
+    <enforcer.plugin.version>3.7.0</enforcer.plugin.version>
+    <jacoco.plugin.version>0.8.16</jacoco.plugin.version>
     <surefire.plugin.version>3.6.1</surefire.plugin.version>
     <fmt.maven.plugin.version>2.29</fmt.maven.plugin.version>
     <compiler.maven.plugin.version>3.16.0</compiler.maven.plugin.version>
@@ -50,27 +50,28 @@
     <notification.builder.version>9.4.1</notification.builder.version>
     <fhir.parser.version>2.7.0</fhir.parser.version>
     <!-- HAPI FHIR Framework -->
-    <hapi.fhir.version>8.6.0</hapi.fhir.version>
+    <hapi.fhir.version>8.6.8</hapi.fhir.version>
     <!-- HAPI FHIR Core: Important, this must match the version declared in the Framework -->
     <hl7.version>6.6.7</hl7.version>
     <!--SpringDoc OpenApi  -->
     <springdoc.version>3.2.0</springdoc.version>
-    <swagger-ui.version>5.34.0</swagger-ui.version>
-    <openapi-generator-maven-plugin.version>7.26.0</openapi-generator-maven-plugin.version>
+    <swagger-ui.version>5.34.1</swagger-ui.version>
+    <openapi-generator-maven-plugin.version>7.27.0</openapi-generator-maven-plugin.version>
     <openapi-generator.inputSpec>target/spec/api-spec.yaml</openapi-generator.inputSpec>
     <openapi-generator.generatorName>markdown</openapi-generator.generatorName>
     <openapi-generator.outputDir>docs/api</openapi-generator.outputDir>
     <!-- Fix CVEs -->
     <!-- Needs to be removed if new spring-version/hapi-version is applied to check if a new version is there -->
     <central-publishing-maven-plugin.version>0.12.0</central-publishing-maven-plugin.version>
-    <errorprone.version>2.51.0</errorprone.version>
+    <errorprone.version>2.52.0</errorprone.version>
     <commons.io.version>2.22.0</commons.io.version>
     <commons.fileupload.version>1.6.0</commons.fileupload.version>
-    <commons.lang3.version>3.21.0</commons.lang3.version>
+    <commons.lang3.version>3.22.0</commons.lang3.version>
     <commons.text.version>1.15.0</commons.text.version>
-    <dep.bouncycastle.version>1.86</dep.bouncycastle.version>
-    <jackson-2-bom.version>2.22.4</jackson-2-bom.version>
-    <jackson-bom.version>3.2.4</jackson-bom.version>
+    <commons-codec.version>1.23.0</commons-codec.version>
+    <dep.bouncycastle.version>1.87</dep.bouncycastle.version>
+    <jackson-2-bom.version>2.23.0</jackson-2-bom.version>
+    <jackson-bom.version>3.3.0</jackson-bom.version>
     <wiremock-integrations.spring-boot.version>4.4.3</wiremock-integrations.spring-boot.version>
     <netty.version>4.2.16.Final</netty.version>
     <httpcore5.version>5.4.3</httpcore5.version>
@@ -181,7 +182,7 @@
       <dependency>
         <groupId>org.eclipse.jetty.ee10</groupId>
         <artifactId>jetty-ee10-bom</artifactId>
-        <version>12.1.14</version>
+        <version>12.1.15</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -489,7 +490,7 @@
       <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
-          <version>2.7.1</version>
+          <version>2.9.0</version>
           <configuration>
               <licenseName>eupl_v1_2</licenseName>
               <inceptionYear>2025</inceptionYear>
