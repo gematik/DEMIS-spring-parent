@@ -1,6 +1,9 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.1.19
+- added guava to dependency management
+
 ## Release 4.1.18
 - Updated spring-boot-starter-parent to 4.1.3
 - updated notification-builder-library to 9.5.0
