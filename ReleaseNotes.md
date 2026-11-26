@@ -1,6 +1,10 @@
 <div style="text-align:right"><img src="https://raw.githubusercontent.com/gematik/gematik.github.io/master/Gematik_Logo_Flag_With_Background.png" width="250" height="47" alt="gematik GmbH Logo"/> <br/> </div> <br/>
 
 # Release Notes spring-parent
+## Release 4.2.0
+- Updated jdbc-postgres to 42.7.15
+- updated service-base to 3.2.1
+
 ## Release 4.1.19
 - added guava to dependency management
 
